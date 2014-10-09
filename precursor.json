@@ -1,0 +1,202 @@
+{
+    "project": {
+        "id": "project",
+        "name": "Project",
+        "expandable": false,
+        "is_setting": true,
+        "is_hidden": true,
+        "priority": 1,
+        "details": {
+            "description": ""
+        },
+        "fields": [
+            {
+                "name": "release",
+                "value": false,
+                "meta": "bool"
+            }
+        ]
+    },
+    "webfonts": {
+        "id": "webfonts",
+        "name": "Web fonts",
+        "expandable": true,
+        "is_setting": false,
+        "is_hidden": false,
+        "priority": 2,
+        "details": {
+            "description": "Declare your web fonts here. The 'value' is the font-family name you'll use, while the 'name' is the filename of the web font. You can declare your fonts as @variables in the 'Fonts' area of the project."
+        },
+        "fields": [
+            {
+                "name": "GillSansStd",
+                "value": "Conv_GillSansStd",
+                "meta": "string"
+            },
+            {
+                "name": "GillSansStd-Bold",
+                "value": "Conv_GillSansStd-Bold",
+                "meta": "string"
+            },
+            {
+                "name": "GillSansStd-Light",
+                "value": "Conv_GillSansStd-Light",
+                "meta": "string"
+            }
+        ]
+    },
+    "colors": {
+        "id": "colours",
+        "name": "Colours",
+        "expandable": true,
+        "is_setting": true,
+        "is_hidden": false,
+        "priority": 3,
+        "details": {
+            "description": "Add in your colours here. You can add as many as you like. Once they're added, you'll be able to use them as @variables in your .less files."
+        },
+        "fields": [
+            {
+                "name": "darkblue",
+                "value": "#110F3A",
+                "meta": "string"
+            },
+            {
+                "name": "aquablue",
+                "value": "#32BFCC",
+                "meta": "string"
+            },
+            {
+                "name": "lightblue",
+                "value": "#79CED7",
+                "meta": "string"
+            },
+            {
+                "name": "grey",
+                "value": "#989898",
+                "meta": "string"
+            },
+            {
+                "name": "darkgrey",
+                "value": "#9b9d9f",
+                "meta": "string"
+            }
+        ]
+    },
+    "mediaqueries": {
+        "id": "mediaqueries",
+        "name": "Media Queries",
+        "expandable": false,
+        "is_setting": true,
+        "is_hidden": false,
+        "priority": 6,
+        "details": {
+            "description": "Define your break points in here."
+        },
+        "fields": [
+            {
+                "name": "screen-phone-portrait-min",
+                "value": "1px",
+                "meta": "string"
+            },
+            {
+                "name": "screen-phone-portrait-max",
+                "value": "480px",
+                "meta": "string"
+            },
+            {
+                "name": "screen-phone-landscape-min",
+                "value": "321px",
+                "meta": "string"
+            },
+            {
+                "name": "screen-phone-landscape-max",
+                "value": "767px",
+                "meta": "string"
+            },
+            {
+                "name": "screen-tablet-portrait-min",
+                "value": "768px",
+                "meta": "string"
+            },
+            {
+                "name": "screen-tablet-portrait-max",
+                "value": "1023px",
+                "meta": "string"
+            },
+            {
+                "name": "screen-tablet-landscape-min",
+                "value": "768px",
+                "meta": "string"
+            },
+            {
+                "name": "screen-tablet-landscape-max",
+                "value": "1169px",
+                "meta": "string"
+            },
+            {
+                "name": "screen-desktop-min",
+                "value": "1170px",
+                "meta": "string"
+            },
+            {
+                "name": "SmartphonesPortraitAndLandscape",
+                "value": "~\"only screen and (min-width: @{screen-phone-portrait-min}) and (max-width: @{screen-phone-portrait-max})\"",
+                "meta": "string"
+            },
+            {
+                "name": "SmartphonesLandscape",
+                "value": "~\"only screen and (min-width: @{screen-phone-landscape-min}) and (max-width: @{screen-phone-landscape-max})\"",
+                "meta": "string"
+            },
+            {
+                "name": "SmartphonesPortrait",
+                "value": "~\"only screen and (min-width: @{screen-phone-portrait-min}) and (max-width: @{screen-phone-portrait-max})\"",
+                "meta": "string"
+            },
+            {
+                "name": "iPadPortraitAndLandscape",
+                "value": "~\"only screen and (min-width: @{screen-tablet-portrait-min}) and (max-width: @{screen-tablet-landscape-max})\"",
+                "meta": "string"
+            },
+            {
+                "name": "iPadLandscape",
+                "value": "~\"only screen and (min-device-width: @{screen-tablet-landscape-min}) and (max-device-width: @{screen-tablet-landscape-max}) and (orientation: landscape), only screen and (min-width: @{screen-tablet-landscape-min}) and (max-width: @{screen-desktop-min})\"",
+                "meta": "string"
+            },
+            {
+                "name": "iPadPortrait",
+                "value": "~\"only screen and (min-device-width: @{screen-tablet-portrait-min}) and (max-device-width: @{screen-tablet-portrait-max}) and (orientation: portrait), only screen and (min-width: @{screen-tablet-portrait-min}) and (max-width: @{screen-tablet-portrait-max})\"",
+                "meta": "string"
+            },
+            {
+                "name": "DesktopAndLaptop",
+                "value": "~\"only screen and (min-width: @{screen-desktop-min})\"",
+                "meta": "string"
+            }
+        ]
+    },
+    "includes": {
+        "id": "includes",
+        "name": "Includes",
+        "expandable": true,
+        "is_setting": false,
+        "is_hidden": false,
+        "priority": 8,
+        "details": {
+            "description": "Includes are mixin files only. They don't get compiled, rather, are for re-usable CSS functions (e.g. .rounded(5px)). You can use your own mixin files, simply drop them into the /src/mixins/ folder in your site, and reference the filename here."
+        },
+        "fields": [
+            {
+                "name": "Mixingbowl",
+                "value": "mixingbowl",
+                "meta": "string"
+            },
+            {
+                "name": "Settings",
+                "value": "settings",
+                "meta": "string"
+            }
+        ]
+    }
+}

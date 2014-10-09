@@ -1,0 +1,438 @@
+//  ==========================================================================
+//  .-. .-. .-. .-. . . .-. .-. .-. .-.
+//	|-' |(  |-  |   | | |(  `-. | | |( 
+//	'   ' ' `-' `-' `-' ' ' `-' `-' ' '
+//								by Fuel
+//  ==========================================================================
+
+//	ROUNDED
+//	Finely rounded corners for
+//	all-the-things
+
+	.rounded(@radius:2px, @pos:false) {
+		.get(@p) when (@p = false){
+			-moz-border-radius:@radius;
+			-webkit-border-radius:@radius;
+			-o-border-radius:@radius;
+			-ms-border-radius:@radius;
+			-khtml-border-radius:@radius;
+			border-radius:@radius;
+		}
+		.get(@p) when (@p = topleft){
+			-moz-border-radius-topleft:@radius;
+			-webkit-border-top-left-radius:@radius;
+			-o-border-top-left-radius:@radius;
+			-ms-border-top-left-radius:@radius;
+			-khtml-border-top-left-radius:@radius;
+			border-top-left-radius:@radius;
+		}
+		.get(@p) when (@p = topright){
+			-moz-border-radius-topright:@radius;
+			-webkit-border-top-right-radius:@radius;
+			-o-border-top-right-radius:@radius;
+			-ms-border-top-right-radius:@radius;
+			-khtml-border-top-right-radius:@radius;
+			border-top-right-radius:@radius;
+		}
+		.get(@p) when (@p = bottomright){
+			-moz-border-radius-bottomright:@radius;
+			-webkit-border-bottom-right-radius:@radius;
+			-o-border-bottom-right-radius:@radius;
+			-ms-border-bottom-right-radius:@radius;
+			-khtml-border-bottom-right-radius:@radius;
+			border-bottom-right-radius:@radius;
+		}
+		.get(@p) when (@p = topleft){
+			-moz-border-radius-bottomleft:@radius;
+			-webkit-border-bottom-left-radius:@radius;
+			-o-border-bottom-left-radius:@radius;
+			-ms-border-bottom-left-radius:@radius;
+			-khtml-border-bottom-left-radius:@radius;
+			border-bottom-left-radius:@radius;
+		}
+		.get(@pos);
+	} 
+
+//  ==========================================================================
+//	GRADIENTS
+//	A basic two colour gradient with a fallback
+
+	.gradient(@from, @to, @fallback) {
+		background:@fallback; 
+		background-image:-moz-linear-gradient(top, @from 0%, @to 100%);
+		background-image:-webkit-gradient(linear, left top, left bottom, from(@to), to(@from));
+		background-image:-webkit-linear-gradient(top,color-stop(0, @from), color-stop(1, @to));
+		background-image:-ms-linear-gradient(top, @from 0%, @to 100%);
+		background-image:-o-linear-gradient(top, @from 0%, @to 100%);
+	}
+
+//  ==========================================================================
+//	FLOATS
+//	Float an element
+
+	.float(@f){
+	    float:@f;
+	}
+
+//  ==========================================================================
+//	CLEARFIX
+//	Adds a clearfix to an element
+
+	.clearfix(){
+	    &:before,
+	    &:after {
+	    content: " ";
+	    display: table;
+	    }
+	    &:after {
+	    clear: both;
+	    }
+	}
+
+//  ==========================================================================
+//	ANIMATIONS
+//	Easing and delay mixins
+
+	.easing(){
+		@easing:cubic-bezier(.3,.43,.22,.89);
+		transition-timing-function:@easing;
+		-webkit-transition-timing-function:@easing;
+	}
+	.delay(@time){
+		-webkit-transition-delay:@time;
+	}
+
+	.matrix (@rotate: 0.86, @scale: 0.5, @translate: -0.5, @skew: 0.86, @x: 0, @y: 0) {
+	    -webkit-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+	       -moz-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+	        -ms-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+	         -o-transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+	            transform: matrix(@rotate, @scale, @translate, @skew, @x, @y);
+	  
+	    filter: e(%("progid:DXImageTransform.Microsoft.Matrix(M11=%d, M12=%d, M21=%d, M22=%d, sizingMethod='auto expand')", @rotate, @scale, @translate, @skew));
+	}
+
+	.matrix3d (@values: "1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1") {
+	    -webkit-transform: matrix3d(e(@values));
+	       -moz-transform: matrix3d(e(@values));
+	        -ms-transform: matrix3d(e(@values));
+	         -o-transform: matrix3d(e(@values));
+	            transform: matrix3d(e(@values));
+	}
+
+//  ==========================================================================
+//	DROP SHADOWS
+//	Bringing back web 2.0
+//	Inset and default available
+
+	.dropshadow(@a:0px, @b:1px, @c:10px, @colour:rgba(0, 0, 0, 1)) {
+		-moz-box-shadow:@a @b @c @colour;
+		-webkit-box-shadow:@a @b @c @colour;
+		box-shadow:@a @b @c @colour;
+	}
+	.dropshadowInset(@a:0px, @b:1px, @c:10px, @colour:rgba(0, 0, 0, 1)) {
+		-moz-box-shadow:inset @a @b @c @colour;
+		-webkit-box-shadow:inset @a @b @c @colour;
+		box-shadow:inset @a @b @c @colour;
+	}
+
+//  ==========================================================================
+//	OPACITY
+//	Set an opacity value for any element
+
+	.opacity(@opacity: 0.7, @enableIE:true){
+		@thisopacity:percentage(@opacity);
+		@ie8opacity:@opacity*10;
+		-moz-opacity:@opacity;
+		-khtml-opacity:@opacity;  
+		opacity:@opacity;
+		.get(@a) when (@a = true){
+			-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=@thisopacity);
+			filter:alpha(opacity=@ie8opacity);
+		}
+		.get(@enableIE);
+	}
+
+//  ==========================================================================
+//	HEIGHT HACK
+//	Set an auto/min-height for an element (supports IE6+)
+
+	.minheight(@height){
+		min-height:@height !important;
+		height:auto !important;
+		height:@height;
+	}
+
+//  ==========================================================================
+//	TRANSITION
+//	Set a transition for any element
+//	by inputting a speed value
+
+	.transition(@speed){
+		-webkit-transition: all @speed ease;
+		-moz-transition: all @speed ease;
+		-ms-transition: all @speed ease;
+		-o-transition: all @speed ease;
+		transition: all @speed ease;
+	}
+
+//  ==========================================================================
+//	TRANSLATE
+//	Set a transition for any element
+//	by inputting a coord value
+
+	.translateY(@y){
+	    -moz-transform: translateY(@y);
+	    -webkit-transform: translateY(@y);
+	    -ms-transform: translateY(@y);
+	    -o-transform: translateY(@y);
+	    transform: translateY(@y);
+	}
+	.translateX(@x){
+	    -moz-transform: translateX(@x);
+	    -webkit-transform: translateX(@x);
+	    -ms-transform: translateX(@x);
+	    -o-transform: translateX(@x);
+	    transform: translateX(@x);
+	}
+	.translateZ(@z){
+	    -moz-transform: translateZ(@z);
+	    -webkit-transform: translateZ(@z);
+	    -ms-transform: translateZ(@z);
+	    -o-transform: translateZ(@z);
+	    transform: translateZ(@z);
+	}
+	.translate3d(@x, @y, @z){
+		-moz-transform: translate3d(@x, @y, @z);
+	    -webkit-transform: translate3d(@x, @y, @z);
+	    -ms-transform: translate3d(@x, @y, @z);
+	    -o-transform: translate3d(@x, @y, @z);
+	    transform: translate3d(@x, @y, @z);
+	}
+	.rotate(@d){
+		-webkit-transform: rotate(@d);
+	    -moz-transform: rotate(@d);
+	    -o-transform: rotate(@d);
+	    -ms-transform: rotate(@d);
+	    transform: rotate(@d);
+	}
+
+//  ==========================================================================
+//	BOX MODEL
+//	Changes the box model, to allow for 
+//	inner all-the-things
+
+	.boxhack(){
+		-moz-background-clip: border;
+		-webkit-background-clip: border;
+		background-clip: border-box;
+		-moz-background-clip: padding;
+		-webkit-background-clip: padding;
+		background-clip: padding-box;       
+		-moz-background-clip: content;
+		-webkit-background-clip: content;
+		background-clip: content-box;
+	}
+
+//  ==========================================================================
+//	UNSELECTABLE
+//	Remove any text / tap user selections
+//	When the time comes, you'll know
+
+	.unselectable(){
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+//  ==========================================================================
+//	SCALE ELEMENT
+//	Usually set to :hover for amazing scaling abilities
+
+	.scale (@ratio: 1) {
+	  -webkit-transform: scale(@ratio);
+	     -moz-transform: scale(@ratio);
+	      -ms-transform: scale(@ratio);
+	       -o-transform: scale(@ratio);
+	          transform: scale(@ratio);
+	}
+
+	.scale3d (@x: 1, @y: 1, @z: 1) {
+	  -webkit-transform: scale3d(@x, @y, @z);
+	     -moz-transform: scale3d(@x, @y, @z);
+	      -ms-transform: scale3d(@x, @y, @z);
+	          transform: scale3d(@x, @y, @z);
+	}
+
+	.scale (@axis, @value: 1) when (@axis = x) {
+	  -webkit-transform: e(%('scaleX(%d)', @value));
+	     -moz-transform: e(%('scaleX(%d)', @value));
+	      -ms-transform: e(%('scaleX(%d)', @value));
+	       -o-transform: e(%('scaleX(%d)', @value));
+	          transform: e(%('scaleX(%d)', @value));
+	}
+
+	.scale (@axis, @value: 1) when (@axis = y) {
+	  -webkit-transform: e(%('scaleY(%d)', @value));
+	     -moz-transform: e(%('scaleY(%d)', @value));
+	      -ms-transform: e(%('scaleY(%d)', @value));
+	       -o-transform: e(%('scaleY(%d)', @value));
+	          transform: e(%('scaleY(%d)', @value));
+	}
+
+	.scale (@axis, @value: 1) when (@axis = z) {
+	  -webkit-transform: e(%('scaleZ(%d)', @value));
+	     -moz-transform: e(%('scaleZ(%d)', @value));
+	      -ms-transform: e(%('scaleZ(%d)', @value));
+	       -o-transform: e(%('scaleZ(%d)', @value));
+	          transform: e(%('scaleZ(%d)', @value));
+	}
+
+//  ==========================================================================
+//	CENTER ELEMENT
+//	Input the width, height and position style {fixed, absolute}
+
+	.centerit(@width, @height, @position){
+		position:@position;
+		top:50%;
+		left:50%;
+		width:@width;
+		height:@height;
+		margin-left:-(@width/2);
+		margin-top:-(@height/2);
+	}
+
+//  ==========================================================================
+//	ANIMATIONS
+//	Accepts an animation style, duration and delay
+//	Include http://daneden.me/animate/
+
+
+	.animate(@animation, @duration, @delay){
+		-webkit-animation: @animation @duration;
+		-moz-animation: @animation @duration;
+		-ms-animation: @animation @duration;
+		-o-animation: @animation @duration;
+		animation: @animation @duration;
+		-webkit-animation-delay: @delay;
+		-webkit-animation-timing-function: ease;
+		-webkit-animation-fill-mode: both;
+		-moz-animation-delay: @delay;
+		-moz-animation-timing-function: ease;
+		-moz-animation-fill-mode: both;
+		-ms-animation-delay: @delay;
+		-ms-animation-timing-function: ease;
+		-ms-animation-fill-mode: both;
+		-o-animation-delay: @delay;
+		-o-animation-timing-function: ease;
+		-o-animation-fill-mode: both;
+		animation-delay: @delay;
+		animation-timing-function: ease;
+		animation-fill-mode: both;
+	}
+
+
+//  ==========================================================================
+	.fuelFont(){
+		font-family: 'fuel';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+//  ==========================================================================
+	.removeTapColor(){
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+     	 -webkit-tap-highlight-color: transparent;
+	}
+
+	.textStroke(){
+		-webkit-text-stroke:1px;
+		//-webkit-text-stroke: 1px rgba(0,0,0,0.1);
+	}
+
+
+//  ==========================================================================
+	.blur(@b:5px){
+		-webkit-filter:blur(@b);
+		-ms-filter:blur(@b);
+		-o-filter:blur(@b);
+		filter:blur(@b);
+	}
+
+//	==========================================================================
+	.cursor(@name){
+		.get(@n) when (@n = pointer){
+			cursor:pointer;
+		}
+		.get(@n) when (@n = close){
+			cursor:url("/src/images/cursor-close.png") 30 30,auto;
+		}
+		.get(@n) when (@n = default){
+			cursor:default;
+		}
+		.get(@n) when (@n = loader){
+			cursor:url("/src/images/Preloader_4.gif") 30 30,auto;
+		}
+		.get(@name);
+	}
+
+
+	.hidden(){
+		.opacity(0);
+		visibility:hidden;
+	}
+
+	.visible(){
+		.opacity(1);
+		visibility:visible;
+	}
+
+	.IsVisibleLayer(){
+		.hidden();
+		&.IsVisible{
+			.visible();
+		}
+	}
+	.IsFixed(){
+		position:fixed;
+		top:0;
+		left:0;
+	}
+
+//	==========================================================================
+
+	.listExtract(@list){
+	    .loop(@i) when(@i =< length(@list)) {
+	        @process:escape(extract(@list, @i));
+	        div {
+	            test: @process;
+	        }
+	        .loop(@i + 1); 
+	    }
+	    .loop(1);
+	}
+
+	.listCompareAndExtract(@list1, @list2){
+	    .loop(@i) when(@i =< length(@list1)) {
+	        @process:escape(extract(@list1, @i));
+	        .color-@{process}{ 
+	            color:extract(@list2, @i);
+	        }
+	        .bg-@{process}{ 
+	            background-color:extract(@list2, @i);
+	        }
+	        .loop(@i + 1); 
+	    }
+	    .loop(1);
+	}   
