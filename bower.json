@@ -1,8 +1,12 @@
 {
-  "name": "Precursor starter package",
+  "name": "precursor-starter-pack",
   "version": "1.0.0",
-  "main": "dist/",
-  "license": "MIT",
+  "ignore": [
+    ".gitignore",
+    ".gitattributes",
+    ".bower.json",
+    "bower.json"
+  ],
   "keywords": [
     "precursor"
   ]
