@@ -31,17 +31,17 @@
             {
                 "name": "GillSansStd",
                 "value": "Conv_GillSansStd",
-                "meta": "string"
+                "meta": "webfont"
             },
             {
                 "name": "GillSansStd-Bold",
                 "value": "Conv_GillSansStd-Bold",
-                "meta": "string"
+                "meta": "webfont"
             },
             {
                 "name": "GillSansStd-Light",
                 "value": "Conv_GillSansStd-Light",
-                "meta": "string"
+                "meta": "webfont"
             }
         ]
     },
@@ -97,47 +97,47 @@
             {
                 "name": "screen-phone-portrait-min",
                 "value": "1px",
-                "meta": "string"
+                "meta": "pixel"
             },
             {
                 "name": "screen-phone-portrait-max",
                 "value": "480px",
-                "meta": "string"
+                "meta": "pixel"
             },
             {
                 "name": "screen-phone-landscape-min",
                 "value": "321px",
-                "meta": "string"
+                "meta": "pixel"
             },
             {
                 "name": "screen-phone-landscape-max",
                 "value": "767px",
-                "meta": "string"
+                "meta": "pixel"
             },
             {
                 "name": "screen-tablet-portrait-min",
                 "value": "768px",
-                "meta": "string"
+                "meta": "pixel"
             },
             {
                 "name": "screen-tablet-portrait-max",
                 "value": "1023px",
-                "meta": "string"
+                "meta": "pixel"
             },
             {
                 "name": "screen-tablet-landscape-min",
                 "value": "768px",
-                "meta": "string"
+                "meta": "pixel"
             },
             {
                 "name": "screen-tablet-landscape-max",
                 "value": "1169px",
-                "meta": "string"
+                "meta": "pixel"
             },
             {
                 "name": "screen-desktop-min",
                 "value": "1170px",
-                "meta": "string"
+                "meta": "pixel"
             },
             {
                 "name": "SmartphonesPortraitAndLandscape",
