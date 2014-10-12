@@ -97,47 +97,47 @@
             {
                 "name": "screen-phone-portrait-min",
                 "value": "1px",
-                "meta": "pixel"
+                "meta": "string"
             },
             {
                 "name": "screen-phone-portrait-max",
                 "value": "480px",
-                "meta": "pixel"
+                "meta": "string"
             },
             {
                 "name": "screen-phone-landscape-min",
                 "value": "321px",
-                "meta": "pixel"
+                "meta": "string"
             },
             {
                 "name": "screen-phone-landscape-max",
                 "value": "767px",
-                "meta": "pixel"
+                "meta": "string"
             },
             {
                 "name": "screen-tablet-portrait-min",
                 "value": "768px",
-                "meta": "pixel"
+                "meta": "string"
             },
             {
                 "name": "screen-tablet-portrait-max",
                 "value": "1023px",
-                "meta": "pixel"
+                "meta": "string"
             },
             {
                 "name": "screen-tablet-landscape-min",
                 "value": "768px",
-                "meta": "pixel"
+                "meta": "string"
             },
             {
                 "name": "screen-tablet-landscape-max",
                 "value": "1169px",
-                "meta": "pixel"
+                "meta": "string"
             },
             {
                 "name": "screen-desktop-min",
                 "value": "1170px",
-                "meta": "pixel"
+                "meta": "string"
             },
             {
                 "name": "SmartphonesPortraitAndLandscape",
