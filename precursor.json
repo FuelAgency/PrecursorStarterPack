@@ -58,27 +58,27 @@
         "fields": [
             {
                 "name": "darkblue",
-                "value": "#110F3A",
+                "value": "110F3A",
                 "meta": "hex"
             },
             {
                 "name": "aquablue",
-                "value": "#32BFCC",
+                "value": "32BFCC",
                 "meta": "hex"
             },
             {
                 "name": "lightblue",
-                "value": "#79CED7",
+                "value": "79CED7",
                 "meta": "hex"
             },
             {
                 "name": "grey",
-                "value": "#989898",
+                "value": "989898",
                 "meta": "hex"
             },
             {
                 "name": "darkgrey",
-                "value": "#9b9d9f",
+                "value": "9b9d9f",
                 "meta": "hex"
             }
         ]
@@ -142,37 +142,37 @@
             {
                 "name": "SmartphonesPortraitAndLandscape",
                 "value": "~\"only screen and (min-width: @{screen-phone-portrait-min}) and (max-width: @{screen-phone-portrait-max})\"",
-                "meta": "string"
+                "meta": "multistring"
             },
             {
                 "name": "SmartphonesLandscape",
                 "value": "~\"only screen and (min-width: @{screen-phone-landscape-min}) and (max-width: @{screen-phone-landscape-max})\"",
-                "meta": "string"
+                "meta": "multistring"
             },
             {
                 "name": "SmartphonesPortrait",
                 "value": "~\"only screen and (min-width: @{screen-phone-portrait-min}) and (max-width: @{screen-phone-portrait-max})\"",
-                "meta": "string"
+                "meta": "multistring"
             },
             {
                 "name": "iPadPortraitAndLandscape",
                 "value": "~\"only screen and (min-width: @{screen-tablet-portrait-min}) and (max-width: @{screen-tablet-landscape-max})\"",
-                "meta": "string"
+                "meta": "multistring"
             },
             {
                 "name": "iPadLandscape",
                 "value": "~\"only screen and (min-device-width: @{screen-tablet-landscape-min}) and (max-device-width: @{screen-tablet-landscape-max}) and (orientation: landscape), only screen and (min-width: @{screen-tablet-landscape-min}) and (max-width: @{screen-desktop-min})\"",
-                "meta": "string"
+                "meta": "multistring"
             },
             {
                 "name": "iPadPortrait",
                 "value": "~\"only screen and (min-device-width: @{screen-tablet-portrait-min}) and (max-device-width: @{screen-tablet-portrait-max}) and (orientation: portrait), only screen and (min-width: @{screen-tablet-portrait-min}) and (max-width: @{screen-tablet-portrait-max})\"",
-                "meta": "string"
+                "meta": "multistring"
             },
             {
                 "name": "DesktopAndLaptop",
                 "value": "~\"only screen and (min-width: @{screen-desktop-min})\"",
-                "meta": "string"
+                "meta": "multistring"
             }
         ]
     },
