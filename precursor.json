@@ -59,27 +59,27 @@
             {
                 "name": "darkblue",
                 "value": "#110F3A",
-                "meta": "string"
+                "meta": "hex"
             },
             {
                 "name": "aquablue",
                 "value": "#32BFCC",
-                "meta": "string"
+                "meta": "hex"
             },
             {
                 "name": "lightblue",
                 "value": "#79CED7",
-                "meta": "string"
+                "meta": "hex"
             },
             {
                 "name": "grey",
                 "value": "#989898",
-                "meta": "string"
+                "meta": "hex"
             },
             {
                 "name": "darkgrey",
                 "value": "#9b9d9f",
-                "meta": "string"
+                "meta": "hex"
             }
         ]
     },
