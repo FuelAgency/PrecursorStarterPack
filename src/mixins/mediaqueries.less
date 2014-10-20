@@ -1,0 +1,48 @@
+// screen-phone-portrait-min
+@screen-phone-portrait-min:1px;
+
+// screen-phone-portrait-max
+@screen-phone-portrait-max:480px;
+
+// screen-phone-landscape-min
+@screen-phone-landscape-min:321px;
+
+// screen-phone-landscape-max
+@screen-phone-landscape-max:767px;
+
+// screen-tablet-portrait-min
+@screen-tablet-portrait-min:768px;
+
+// screen-tablet-portrait-max
+@screen-tablet-portrait-max:1023px;
+
+// screen-tablet-landscape-min
+@screen-tablet-landscape-min:768px;
+
+// screen-tablet-landscape-max
+@screen-tablet-landscape-max:1169px;
+
+// screen-desktop-min
+@screen-desktop-min:1170px;
+
+// SmartphonesPortraitAndLandscape
+@SmartphonesPortraitAndLandscape:~"only screen and (min-width: @{screen-phone-portrait-min}) and (max-width: @{screen-phone-portrait-max})";
+
+// SmartphonesLandscape
+@SmartphonesLandscape:~"only screen and (min-width: @{screen-phone-landscape-min}) and (max-width: @{screen-phone-landscape-max})";
+
+// SmartphonesPortrait
+@SmartphonesPortrait:~"only screen and (min-width: @{screen-phone-portrait-min}) and (max-width: @{screen-phone-portrait-max})";
+
+// iPadPortraitAndLandscape
+@iPadPortraitAndLandscape:~"only screen and (min-width: @{screen-tablet-portrait-min}) and (max-width: @{screen-tablet-landscape-max})";
+
+// iPadLandscape
+@iPadLandscape:~"only screen and (min-device-width: @{screen-tablet-landscape-min}) and (max-device-width: @{screen-tablet-landscape-max}) and (orientation: landscape), only screen and (min-width: @{screen-tablet-landscape-min}) and (max-width: @{screen-desktop-min})";
+
+// iPadPortrait
+@iPadPortrait:~"only screen and (min-device-width: @{screen-tablet-portrait-min}) and (max-device-width: @{screen-tablet-portrait-max}) and (orientation: portrait), only screen and (min-width: @{screen-tablet-portrait-min}) and (max-width: @{screen-tablet-portrait-max})";
+
+// DesktopAndLaptop
+@DesktopAndLaptop:~"only screen and (min-width: @{screen-desktop-min})";
+
