@@ -201,6 +201,11 @@
                 "name": "Media Queries",
                 "value": "mediaqueries",
                 "meta": "string"
+            },
+            {
+                "name": "Mixing bowl",
+                "value": "mixingbowl",
+                "meta": "string"
             }
         ]
     }
