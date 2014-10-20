@@ -188,13 +188,18 @@
         },
         "fields": [
             {
-                "name": "Mixingbowl",
-                "value": "mixingbowl",
+                "name": "Web Fonts",
+                "value": "webfonts",
                 "meta": "string"
             },
             {
-                "name": "Settings",
-                "value": "settings",
+                "name": "Colours",
+                "value": "colours",
+                "meta": "string"
+            },
+            {
+                "name": "Media Queries",
+                "value": "colours",
                 "meta": "string"
             }
         ]
