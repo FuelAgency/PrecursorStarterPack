@@ -5,7 +5,6 @@
         "expandable": false,
         "is_setting": true,
         "is_hidden": true,
-        "priority": 1,
         "details": {
             "description": ""
         },
@@ -23,7 +22,6 @@
         "expandable": true,
         "is_setting": false,
         "is_hidden": false,
-        "priority": 2,
         "details": {
             "description": "Declare your web fonts here. The 'value' is the font-family name you'll use, while the 'name' is the filename of the web font. You can declare your fonts as @variables in the 'Fonts' area of the project."
         },
@@ -51,7 +49,6 @@
         "expandable": true,
         "is_setting": true,
         "is_hidden": false,
-        "priority": 3,
         "details": {
             "description": "Add in your colours here. You can add as many as you like. Once they're added, you'll be able to use them as @variables in your .less files."
         },
@@ -89,7 +86,6 @@
         "expandable": false,
         "is_setting": true,
         "is_hidden": false,
-        "priority": 6,
         "details": {
             "description": "Define your break points in here."
         },
@@ -182,16 +178,10 @@
         "expandable": true,
         "is_setting": false,
         "is_hidden": false,
-        "priority": 8,
         "details": {
             "description": "Includes are mixin files only. They don't get compiled, rather, are for re-usable CSS functions (e.g. .rounded(5px)). You can use your own mixin files, simply drop them into the /src/mixins/ folder in your site, and reference the filename here."
         },
         "fields": [
-            {
-                "name": "Web Fonts",
-                "value": "webfonts",
-                "meta": "string"
-            },
             {
                 "name": "Colours",
                 "value": "colours",
